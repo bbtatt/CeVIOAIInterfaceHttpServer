@@ -1,0 +1,7 @@
+C:\Users\tatsu\docs\workspace\CeVIOAIServer\CeVIOServer\bin\Debug\CeVIOServer.dll
+C:\Users\tatsu\docs\workspace\CeVIOAIServer\CeVIOServer\bin\Debug\CeVIOServer.pdb
+C:\Users\tatsu\docs\workspace\CeVIOAIServer\CeVIOServer\obj\Debug\CeVIOAIHttpServer.csproj.AssemblyReference.cache
+C:\Users\tatsu\docs\workspace\CeVIOAIServer\CeVIOServer\obj\Debug\CeVIOAIHttpServer.csproj.CoreCompileInputs.cache
+C:\Users\tatsu\docs\workspace\CeVIOAIServer\CeVIOServer\obj\Debug\CeVIOAIHttpServer.csproj.CopyComplete
+C:\Users\tatsu\docs\workspace\CeVIOAIServer\CeVIOServer\obj\Debug\CeVIOServer.dll
+C:\Users\tatsu\docs\workspace\CeVIOAIServer\CeVIOServer\obj\Debug\CeVIOServer.pdb
