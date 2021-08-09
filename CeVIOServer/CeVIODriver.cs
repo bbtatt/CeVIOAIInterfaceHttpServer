@@ -45,7 +45,7 @@ namespace CeVIOServer
             }
             else
             {
-                CeVIOTalkDictUtils.Init_Dict(DefaultConfigPath + "TalkDictionary.dic");
+                CeVIOTalkDictUtils.Init_Dict(DefaultConfigPath + "TalkDictionary3.dic");
             }
 
             rkconverter = new RomajiKanaConverter();

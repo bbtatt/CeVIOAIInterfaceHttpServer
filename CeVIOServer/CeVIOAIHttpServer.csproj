@@ -80,6 +80,7 @@
     <Compile Include="CeVIODriver.cs" />
     <Compile Include="CeVIOTalkDictUtils.cs" />
     <Compile Include="CeVIOAIServer.cs" />
+    <Compile Include="DirectoryUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RomaKanaConverter.cs" />
   </ItemGroup>
