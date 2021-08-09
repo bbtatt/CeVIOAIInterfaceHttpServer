@@ -15,7 +15,7 @@ namespace CeVIOServer
         string Wav_path { get; } = Path.GetTempPath() + @"CeVIO_WAV\";
         string Wav_file { get => Wav_path + "temp_file.wav"; }
         private string temp_path = Path.GetTempPath();
-        string DefaultConfigPath { get => temp_path.Substring(0, temp_path.Length - 19) + @"CeVIO\" ; }
+        string DefaultConfigPath { get => temp_path.Substring(0, temp_path.Length).Replace(@"AppData\Local\Temp\", "") + @"CeVIO\" ; }
 
         private RomajiKanaConverter rkconverter;
         public CeVIODriver(string cast, string userdic_path, string dic_path)
