@@ -39,7 +39,8 @@ namespace CeVIOServer
         {
             bool runServer = true;
 
-            // While a user hasn't visited the `shutdown` url, keep on handling requests
+            Console.CancelKeyPress += new ConsoleCancelEventHandler(MyCancelHandler);
+            // 現状runServerはfalseになることはない
             while (runServer)
             {
                 try
@@ -58,13 +59,6 @@ namespace CeVIOServer
                     Console.WriteLine(req.UserHostName);
                     Console.WriteLine(req.UserAgent);
                     Console.WriteLine();
-
-                    // If `shutdown` url requested w/ POST, then shutdown the server after serving the page
-                    if ((req.HttpMethod == "POST") && (req.Url.AbsolutePath == "/shutdown"))
-                    {
-                        Console.WriteLine("Shutdown requested");
-                        runServer = false;
-                    }
 
                     // メッセージ送信部
                     StreamReader reader = new StreamReader(req.InputStream, Encoding.UTF8);
@@ -100,29 +94,16 @@ namespace CeVIOServer
             }
         }
 
-
-        static void ReturnInternalError(HttpListenerResponse response, Exception cause)
-        {
-            Console.Error.WriteLine(cause);
-            response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            response.ContentType = "text/plain";
-            try
-            {
-                using (var writer = new StreamWriter(response.OutputStream, Encoding.UTF8))
-                    writer.Write(cause.ToString());
-                response.Close();
-            }
-            catch (Exception e)
-            {
-                Console.Error.WriteLine(e);
-                response.Abort();
-            }
-        }
-
         public static void Stop()
         {
             listener.Stop();
             listener.Close();
+        }
+
+        protected static void MyCancelHandler(object sender, ConsoleCancelEventArgs args)
+        {
+            Console.WriteLine("Ctrl + C is detected. Shutdown process.");
+            Stop();
         }
     }
 }

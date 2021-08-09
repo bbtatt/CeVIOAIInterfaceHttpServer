@@ -90,9 +90,9 @@ namespace CeVIOServer
             string rtext;
 
             rtext = text.ToLower();
-            rtext = Regex.Replace(rtext, "m(<(h1(b|p))>)(<(h2[aiueo])>)", @"ン</\1></\2>");
-            rtext = Regex.Replace(rtext, @"([bcdfghjklmpqrstvwxyz])\1", @"ッ</\1>");
-            rtext = Regex.Replace(rtext, @"([aiueo])\1", @"</\1>ー");
+            rtext = Regex.Replace(rtext, "m(b|p)([aiueo])", @"ン$1$2");
+            rtext = Regex.Replace(rtext, @"([bcdfghjklmpqrstvwxyz])\1", @"ッ$1");
+            rtext = Regex.Replace(rtext, @"([aiueo])\1", @"$1ー");
 
             return Regex.Replace(rtext, String.Join("|", RomajiKanaDict.Keys), match => RomajiKanaDict[match.Value]);
         }
